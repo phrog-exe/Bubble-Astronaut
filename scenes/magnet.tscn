@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://kxm1oq5wryy8"]
+
+[sub_resource type="GDScript" id="GDScript_o64dy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ever8"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nsfu5"]
+size = Vector2(50, 50)
+
+[node name="Magnet" type="CharacterBody2D"]
+script = SubResource("GDScript_o64dy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ever8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_nsfu5")

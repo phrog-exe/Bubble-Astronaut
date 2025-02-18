@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://64xdkyw0fg4l"]
+
+[ext_resource type="Script" path="res://scripts/magnet_ufo.gd" id="1_1mr0u"]
+[ext_resource type="Texture2D" uid="uid://fxvxigfhuacl" path="res://graphics/spodek2.png" id="2_gmiv8"]
+[ext_resource type="AudioStream" uid="uid://4ryhfqhhuorj" path="res://audio/OUCH.mp3" id="3_hmty5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vge0g"]
+radius = 109.0
+height = 218.0
+
+[node name="Magnet" type="Area2D"]
+script = ExtResource("1_1mr0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -1)
+shape = SubResource("CapsuleShape2D_vge0g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, -4.54747e-13)
+scale = Vector2(0.386598, 0.475714)
+texture = ExtResource("2_gmiv8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hmty5")

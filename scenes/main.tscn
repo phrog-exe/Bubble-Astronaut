@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bw1x46prg2wee"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_fqrj2"]
+[ext_resource type="Texture2D" uid="uid://bogekpxg2tlor" path="res://graphics/Blue_Nebula_08-1024x1024.png" id="2_wfudr"]
+[ext_resource type="PackedScene" uid="uid://dpc8ee7s2w345" path="res://scenes/Player.tscn" id="3_wu7jr"]
+[ext_resource type="AudioStream" uid="uid://bjwqu7x74yaa6" path="res://audio/main music.mp3" id="4_cm7k1"]
+[ext_resource type="Script" path="res://scripts/label.gd" id="5_81c5c"]
+[ext_resource type="Texture2D" uid="uid://b02vj81nmahra" path="res://graphics/preview.png" id="6_yqylq"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_fqrj2")
+
+[node name="Background1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(959, 544)
+scale = Vector2(1.88477, 1.06055)
+texture = ExtResource("2_wfudr")
+
+[node name="Background2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(2867, 542)
+scale = Vector2(1.85938, 1.06226)
+texture = ExtResource("2_wfudr")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("3_wu7jr")]
+position = Vector2(833, 334)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Label" type="Label" parent="Player/Camera2D"]
+offset_left = -826.0
+offset_top = -421.0
+offset_right = -546.0
+offset_bottom = -260.0
+script = ExtResource("5_81c5c")
+
+[node name="BG music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_cm7k1")
+autoplay = true
+parameters/looping = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1246.14, 995)
+scale = Vector2(10.6964, 10.6964)
+texture = ExtResource("6_yqylq")

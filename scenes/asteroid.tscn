@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://djucrbu1piovt"]
+
+[ext_resource type="Script" path="res://scripts/asteroid.gd" id="1_d2r5r"]
+[ext_resource type="Texture2D" uid="uid://cu00jh78fi84b" path="res://graphics/asteroida3.png" id="2_xe7cx"]
+[ext_resource type="AudioStream" uid="uid://4ryhfqhhuorj" path="res://audio/OUCH.mp3" id="3_i21wn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yesm4"]
+radius = 37.0
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_d2r5r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 3)
+shape = SubResource("CircleShape2D_yesm4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xe7cx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i21wn")

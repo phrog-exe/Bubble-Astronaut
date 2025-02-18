@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw1x46prg2wee"]
+
+[ext_resource type="PackedScene" uid="uid://dpc8ee7s2w345" path="res://Player.tscn" id="1_jdotb"]
+[ext_resource type="Script" path="res://main.gd" id="1_xlet0"]
+[ext_resource type="Texture2D" uid="uid://bogekpxg2tlor" path="res://graphics/Blue_Nebula_08-1024x1024.png" id="2_yhluo"]
+[ext_resource type="AudioStream" uid="uid://bjwqu7x74yaa6" path="res://audio/main music.mp3" id="4_ptluo"]
+[ext_resource type="Script" path="res://label.gd" id="5_1ji37"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_xlet0")
+
+[node name="Background1" type="Sprite2D" parent="."]
+position = Vector2(959, 544)
+scale = Vector2(1.88477, 1.06055)
+texture = ExtResource("2_yhluo")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(2867, 542)
+scale = Vector2(1.85938, 1.06226)
+texture = ExtResource("2_yhluo")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_jdotb")]
+position = Vector2(833, 334)
+
+[node name="BG music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ptluo")
+autoplay = true
+parameters/looping = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 114.0
+offset_top = 70.0
+offset_right = 394.0
+offset_bottom = 231.0
+script = ExtResource("5_1ji37")

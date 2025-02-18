@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck11y8i5dsm32"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_r3qd1"]
+[ext_resource type="Script" path="res://scripts/label.gd" id="2_bq6nf"]
+[ext_resource type="Texture2D" uid="uid://bogekpxg2tlor" path="res://graphics/Blue_Nebula_08-1024x1024.png" id="3_nxdvu"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_r3qd1")
+
+[node name="Background1" type="Sprite2D" parent="."]
+position = Vector2(959, 544)
+scale = Vector2(1.88477, 1.06055)
+texture = ExtResource("3_nxdvu")
+
+[node name="gameOver" type="Label" parent="."]
+offset_left = 532.0
+offset_top = 311.0
+offset_right = 1428.0
+offset_bottom = 802.0
+script = ExtResource("2_bq6nf")
